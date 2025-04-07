@@ -16,14 +16,14 @@ COPY . .
 RUN npm run build
 
 # Copy environment files to the correct locations
-RUN cp .env .medusa/server/.env.production && \
-    cp .env .medusa/server/.env
+# RUN cp .env .medusa/server/.env.production && \
+#     cp .env .medusa/server/.env
 
 # Expose the port the app will run on
 EXPOSE 9005
 
-## Export production environment
-#ENV NODE_ENV=production
+#Export production environment
+ENV NODE_ENV=production
 
 # Start the application using the specified command
 CMD ["sh", "-c", "npm run start"]
